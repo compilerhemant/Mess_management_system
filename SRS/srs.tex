@@ -1,0 +1,305 @@
+%Copyright 2014 Jean-Philippe Eisenbarth
+%This program is free software: you can 
+%redistribute it and/or modify it under the terms of the GNU General Public 
+%License as published by the Free Software Foundation, either version 3 of the 
+%License, or (at your option) any later version.
+%This program is distributed in the hope that it will be useful,but WITHOUT ANY 
+%WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+%PARTICULAR PURPOSE. See the GNU General Public License for more details.
+%You should have received a copy of the GNU General Public License along with 
+%this program.  If not, see <http://www.gnu.org/licenses/>.
+
+%Based on the code of Yiannis Lazarides
+%http://tex.stackexchange.com/questions/42602/software-requirements-specification-with-latex
+%http://tex.stackexchange.com/users/963/yiannis-lazarides
+%Also based on the template of Karl E. Wiegers
+%http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
+%http://karlwiegers.com
+\documentclass{scrreprt}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\hypersetup{
+    bookmarks=false,    % show bookmarks bar?
+    pdftitle={Software Requirement Specification},    % title
+    pdfauthor={Jean-Philippe Eisenbarth},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+}%
+\def\myversion{1.0 }
+\date{}
+%\title{%
+
+%}
+\usepackage{hyperref}
+\begin{document}
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.9cm}
+        for\\
+       % \vspace{1.9cm}
+     Mess management system\\
+       
+       % \vspace{1.9cm}
+        \LARGE{Version \myversion }\\
+        \vspace{1.9cm}
+        Prepared by\\ Hemant M170***CS\\
+                    Rajesh Khanna M170434CS\\
+                    Vrinda C M170***CS\\
+                    Navdeep Singh M170***CS\\
+                    Samila M170***CS\\
+        \vspace{1.9cm}
+        NIT Calicut\\
+        \vspace{1.9cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+
+\chapter*{Revision History}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+	    Name & Date & Reason For Changes & Version\\
+        \hline
+	    21 & 22 & 23 & 24\\
+        \hline
+	    31 & 32 & 33 & 34\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\chapter{Introduction}
+
+\section{Purpose}
+The purpose of this application is to automatize the hostel mess functionality and provide both the students and mess faculty a smart platform to interact with each other. 
+
+\section{/Document Conventions}
+$<$Describe any standards or typographical conventions that were followed when 
+writing this SRS, such as fonts or highlighting that have special significance.  
+For example, state whether priorities  for higher-level requirements are assumed 
+to be inherited by detailed requirements, or whether every requirement statement 
+is to have its own priority.$>$
+
+\section{Intended Audience and Reading Suggestions}
+This document is to be read by the development team, mentor,guide. Our stakeholders may  review  the  document to  learn  about  the project and to understand the requirements. The SRS has been organized approximately in order of  increasing  specificity.  The  developers  and  project  managers  need  to  become  intimately familiar with the SRS. 
+
+\section{Project Scope}
+The features of Mess management system enables the mess contractors to manage various mess activities and keep track of various records.Also the features of this management system allows students to track their mess usage with transparency between the students and mess management. 
+
+
+\section{/References}
+$<$List any other documents or Web addresses to which this SRS refers. These may 
+include user interface style guides, contracts, standards, system requirements 
+specifications, use case documents, or a vision and scope document. Provide 
+enough information so that the reader could access a copy of each reference, 
+including title, author, version number, date, and source or location.$>$
+
+
+\chapter{Overall Description}
+
+\section{Product Perspective}
+This web application consists of two parts: one web interface for the mess manager and the other web interface is for the students or any other mess users. Mess manger uses the web app to keep track of mess users, their attendance, their food purchases and the bill along with mess items’ stocks. Students can use this web application to view their mess usage, current bill amount, bill payment and feed back form to the mess management. 
+
+\section{Product Functions}
+These are the list of major functions \\
+Mess manager interface:
+\begin{itemize}
+	\item Students attendance \\
+    \item Billing students for each meal and extras they purchase \\
+    \item Mess staffs attendance \\
+    \item Mess menu display and updates/changes in menu \\
+    \item Availability of stocks of food items in mess and updating its status\\
+    \item Deleting or adding a new students \\
+    \item Deleting or adding items in mess \\
+    \item View monthly profit analysis  \\
+
+	\end{itemize}
+Students’ interface:
+\begin{itemize}
+    \item Checking bill amount \\
+    \item Purchase history\\
+    \item Bill payment \\
+    \item View mess menu \\
+    \item Feedback form for mess/menu improvement \\
+\end{itemize}   
+\section{User Classes and Characteristics}
+There are two types of users who interact with the system: students and the mess manager.Each of these two types of users has different use of the system so each of them has their own requirements.\\
+The students and other mess users can use the web applications only for viewing their purchase history , bill view and payment , view mess menu and send a feedback form to the mess management.\\
+On the manager’s side he/she can use the web application only for maintaining students/mess faculty attendance records, Billing students ,stock management and profit analysis.\\
+
+\section{Operating Environment}
+This web application is developed in Ruby on Rails and is platform independent.The application being developed will be able to run in any modern browser.
+
+\section{Design and Implementation Constraints}
+The Internet connection is a constraint for the application. Since the application fetches data from the 
+database over the Internet, it is crucial that there is an Internet connection for the application to function. \\
+
+Both the manager interface and the students' interface  will be constrained by the capacity of the database. Since 
+the database is shared between both interfaces it may be forced to queue incoming requests and therefore 
+increase the time it takes to fetch data.
+
+
+
+\section{User Documentation}
+For  user  documentation  and  information,  please  consult  <link>"to be added later"
+\section{Assumptions and Dependencies}
+One assumption about the product is that it will always be used on computing devices that have
+enough performance. If the phone does not have enough hardware resources available for the application, for 
+example the users might have allocated them with other applications, there may be scenarios where the 
+application does not work as intended or even at all\\
+It is assumed that the users (students/mess users) have a computing device connected to the Internet that can run a browser to access the web application.
+
+
+\chapter{External Interface Requirements}
+
+\section{User Interfaces}
+$<$Describe the logical characteristics of each interface between the software 
+product and the users. This may include sample screen images, any GUI standards 
+or product family style guides that are to be followed, screen layout 
+constraints, standard buttons and functions (e.g., help) that will appear on 
+every screen, keyboard shortcuts, error message display standards, and so on.  
+Define the software components for which a user interface is needed. Details of 
+the user interface design should be documented in a separate user interface 
+specification.$>$
+
+\section{Hardware Interfaces}
+$<$Describe the logical and physical characteristics of each interface between 
+the software product and the hardware components of the system. This may include 
+the supported device types, the nature of the data and control interactions 
+between the software and the hardware, and communication protocols to be 
+used.$>$
+
+\section{Software Interfaces}
+$<$Describe the connections between this product and other specific software 
+components (name and version), including databases, operating systems, tools, 
+libraries, and integrated commercial components. Identify the data items or 
+messages coming into the system and going out and describe the purpose of each.  
+Describe the services needed and the nature of communications. Refer to 
+documents that describe detailed application programming interface protocols.  
+Identify data that will be shared across software components. If the data 
+sharing mechanism must be implemented in a specific way (for example, use of a 
+global data area in a multitasking operating system), specify this as an 
+implementation constraint.$>$
+
+\section{Communications Interfaces}
+$<$Describe the requirements associated with any communications functions 
+required by this product, including e-mail, web browser, network server 
+communications protocols, electronic forms, and so on. Define any pertinent 
+message formatting. Identify any communication standards that will be used, such 
+as FTP or HTTP. Specify any communication security or encryption issues, data 
+transfer rates, and synchronization mechanisms.$>$
+
+
+\chapter{System Features}
+$<$This template illustrates organizing the functional requirements for the 
+product by system features, the major services provided by the product. You may 
+prefer to organize this section by use case, mode of operation, user class, 
+object class, functional hierarchy, or combinations of these, whatever makes the 
+most logical sense for your product.$>$
+
+\section{System Feature 1}
+$<$Don’t really say “System Feature 1.” State the feature name in just a few 
+words.$>$
+
+\subsection{Description and Priority}
+$<$Provide a short description of the feature and indicate whether it is of 
+High, Medium, or Low priority. You could also include specific priority 
+component ratings, such as benefit, penalty, cost, and risk (each rated on a 
+relative scale from a low of 1 to a high of 9).$>$
+
+\subsection{Stimulus/Response Sequences}
+$<$List the sequences of user actions and system responses that stimulate the 
+behavior defined for this feature. These will correspond to the dialog elements 
+associated with use cases.$>$
+
+\subsection{Functional Requirements}
+$<$Itemize the detailed functional requirements associated with this feature.  
+These are the software capabilities that must be present in order for the user 
+to carry out the services provided by the feature, or to execute the use case.  
+Include how the product should respond to anticipated error conditions or 
+invalid inputs. Requirements should be concise, complete, unambiguous, 
+verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
+information is not yet available.$>$
+
+$<$Each requirement should be uniquely identified with a sequence number or a 
+meaningful tag of some kind.$>$
+
+REQ-1:	REQ-2:
+
+\section{System Feature 2 (and so on)}
+
+
+\chapter{Other Nonfunctional Requirements}
+
+\section{Performance Requirements}
+Should not give overly complicated error messages, the workers might not understand it.
+Should work without hanging in between, or at least show a progress bar if takes more than one second to write it to the database.
+They might mistake it for command not being done and issue a new command altogether.
+Can work for at least 3 or 4 hours without shutting down in between.
+Scalable enough for at least 3000 students.
+
+\section{Safety Requirements}
+Backup the data at regular intervals. Their might not be any UPS.
+There should be a double check if the price charged is from the correct account or not. Same should be done for the deletion and updation as well. The MRP of the product should be checked and not used randomly. A simple check of the MRP from the original website will be enough or at least have a link of the product website alongside the product itself. The students can check themselves whether the product is the right product or not.
+Illegal copy and distribution of the software should be prevented.
+There should be some kind of way to check whether the customer is using the genuine software or not.
+No two students should be charged differently for the same product.
+If something is not allowed to be sold as an extra in the mess, that should be prevented. We can have a list of banned things from the hostel chief warden.
+An auditing function should be there to check whether the stock bought is at the right price or not. So that the mess committee can show its expenses.
+
+\section{Security Requirements}
+The product should not run at any time other than the mess time.
+The mess bill of each and every student should be kept private to him/her only. The student and the manager should have a different interface for login. The student should only be able to access the data if he/she is logged in.
+There should be two copies of the data, one on the local machine and one on a remote server just in case if somebody changed the local data they won't be able to change the database saved on the remote server.
+The database should be such that it can be reverted back to a previous state.
+
+\section{Software Quality Attributes}
+A web application will do better, as it will be portable. Record anonymous logs and send them to the developer to further improve the program. Create and use functions in such a way that they can be reused later in the program. Create a function so that the user can change the order in which the menus appear according to his preferences. Also he can choose colors for different views as well. The program should be available as a local program as well as a remote server program, so that if one fails the other one will do. The default cases should be handles appropriately like rounding off the bill. There should be a test suite for the developer to quickly check the error in the program.
+Also in case the developer can't visit the system he can handle it remotely. Add that functionality as well.
+The workers might not be good with computer commands. Not to use complex English words. A translation function might be good to reduce the learning curve.
+The product should have a lower learning curve and ready to use as soon as it is installed.
+
+\section{Business Rules}
+The developer can bypass the admin password in case of testing the program.
+The auditor should be able to audit the expenses of the mess at any time.
+As soon as the licence expires the software won't work. A dump of the database objects will be made which the user can use to migrate to a different software if he wants to. The user can buy a new licence key and enter it to extend the licence.
+
+
+\chapter{Other Requirements}
+$<$Define any other requirements not covered elsewhere in the SRS. This might 
+include database requirements, internationalization requirements, legal 
+requirements, reuse objectives for the project, and so on. Add any new sections 
+that are pertinent to the project.$>$
+
+\section{Appendix A: Glossary}
+%see https://en.wikibooks.org/wiki/LaTeX/Glossary
+$<$Define all the terms necessary to properly interpret the SRS, including 
+acronyms and abbreviations. You may wish to build a separate glossary that spans 
+multiple projects or the entire organization, and just include terms specific to 
+a single project in each SRS.$>$
+
+\section{Appendix B: Analysis Models}
+$<$Optionally, include any pertinent analysis models, such as data flow 
+diagrams, class diagrams, state-transition diagrams, or entity-relationship 
+diagrams.$>$
+
+\section{Appendix C: To Be Determined List}
+$<$Collect a numbered list of the TBD (to be determined) references that remain 
+in the SRS so they can be tracked to closure.$>$
+
+\end{document}
