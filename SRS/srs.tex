@@ -54,7 +54,7 @@
        % \vspace{1.9cm}
         \LARGE{Version \myversion }\\
         \vspace{1.9cm}
-        Prepared by\\ Hemant M170***CS\\
+        Prepared by\\ Hemant Yadav M170065CS\\
                     Rajesh Khanna M170434CS\\
                     Vrinda C M170***CS\\
                     Navdeep Singh M170262CS\\
@@ -313,6 +313,106 @@ Manager clicks on the EXTRAS button.And enters the student id and the item id an
 \item The cost of the extra item is added to the bill of the particular student. 
 \end{enumerate}
 
+\section{Manager Logout}
+
+\subsection{Description and Priority}
+The mess Manager can log out safely while he/she is not using the software in order to avoid any misuse. High priority.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and when the Manager clicks the logout button, the Manager is logged out of the system. The login page is showed at the end.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item A popup can also be shown to the Manager if he actually wants to logout.
+\item The Manager is redirected to the login page. 
+\item The server ends the Manager's current session and logs him out of the system. 
+\end{enumerate}
+
+\section{Backup DB}
+
+\subsection{Description and Priority}
+The mess Manager can backup the local database to the remote server or to a local storage device.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and when the Manager clicks the backup button, he is asked to choose the backup option. Depending upon the action that he chose the backup process will start and a little progress bar will show the progress. As soon as the process completes the same dialogue box will show the status as "completed".
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item The Manager should be logged in. 
+\item He should be connected to the internet if he choses the backup option to upload the backup to the internet.
+\end{enumerate}
+
+\section{Monthly profit analysis}
+
+\subsection{Description and Priority}
+There will be graphs for comparing the monthly profit of the mess. He can also compare it with earlier months as well. It will also show how much his expense was for the given month. The graphs won't be on high priority. We will add them at the end.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and when he click the Monthly profit button, he will be asked to select the month for which the analysis has to be done. After that a graph or some kind of table would be shown to him.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item The Manager should be logged in as always.
+    \item He should only be able to choose the previous months for the analysis. Other months should be greyed out.
+\end{enumerate}
+
+\section{Stock update/view}
+
+\subsection{Description and Priority}
+There will be an option to view the items currently remaining in the stock and update them if required. It can be used to track down what are the things that are required the most and what are the things which are in excess.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and when he clicks the stock option he will be able to see a list of all the items in the stock and their quantity, he can updtae each item individually. He can click on the delete or update button to delete the item altogether or update the quantity of it.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item The Manager should be logged in as always.
+    \item In case of deletion he should be re asked if he is deleting the right thing.
+\end{enumerate}
+
+\section{View Feedback}
+
+\subsection{Description and Priority}
+The mess Manager can see what all the problems the students are having and take appropriate action on them. Its just a simple way to see the feedback. The mess Manager can also reply to the student in that form as well and change the status to read or resolved.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and after he clicks on the feedback section and he will be redirected to the feedback section. He can click on different feedbacks and change their status to read or resolved or reply to the feedback as necessary.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item The Manager should be logged in as always.
+    \item We can add a count on the feedback button as well to count the number of feedbacks that we have received.
+\end{enumerate}
+
+\section{Update Extra items}
+
+\subsection{Description and Priority}
+The students can buy extra items from the mess itself. The list and price of the extra items can be controlled by the Manager. The functionality to do so will be provided in this section of the application.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and after he clicks the Update Extra items button he will be shown a list of extra items with their corresponding MRP. He can click on the correspoding delete or edit button to edit the item. He can also click on the new button at the end of the list to add a new item to the list. He will be presented with a form to add the new item.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item The Manager should be logged in as always.
+    \item The back button shuuld take it back to the previous view of the application.
+    \item Before deleting any item he should be asked again if he is doing what he thinks he is doing.
+\end{enumerate}
+
+
+\section{Update/View Menu}
+
+\subsection{Description and Priority}
+The main menu of the mess can be updated according to the feedback of the students. Also if the mess Manager thinks that something extra should be added or deleted from the main menu he can do so by this section of the app.
+
+\subsection{Stimulus/Response Sequences}
+The Manager has already logged in and after he clicks the Update Extra items button he will be shown a menu. He can change the whole list by clicking the edit button or click on the new button to make it from scratch. A filled form will be showed if he wants to edit the menu or else a new blank form will be shown.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item The Manager should be logged in as always.
+    \item The back button shuuld take it back to the previous view of the application.
+\end{enumerate}
 
 
 
