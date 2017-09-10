@@ -212,36 +212,108 @@ prefer to organize this section by use case, mode of operation, user class,
 object class, functional hierarchy, or combinations of these, whatever makes the 
 most logical sense for your product.$>$
 
-\section{System Feature 1}
-$<$Don’t really say “System Feature 1.” State the feature name in just a few 
-words.$>$
+\section{Mess Login}
+Login authentication for the mess manager. 
+
 
 \subsection{Description and Priority}
-$<$Provide a short description of the feature and indicate whether it is of 
-High, Medium, or Low priority. You could also include specific priority 
-component ratings, such as benefit, penalty, cost, and risk (each rated on a 
-relative scale from a low of 1 to a high of 9).$>$
+Login feature authenticates the mess manager and give the access to his functionalists.Priority is high.
 
 \subsection{Stimulus/Response Sequences}
-$<$List the sequences of user actions and system responses that stimulate the 
-behavior defined for this feature. These will correspond to the dialog elements 
-associated with use cases.$>$
+The Mess manager clicks on the login button on the login  page.The Mess manager has entered his login details on the login
+page.The Mess manager is logged in and is taken to his account page.
 
 \subsection{Functional Requirements}
-$<$Itemize the detailed functional requirements associated with this feature.  
-These are the software capabilities that must be present in order for the user 
-to carry out the services provided by the feature, or to execute the use case.  
-Include how the product should respond to anticipated error conditions or 
-invalid inputs. Requirements should be concise, complete, unambiguous, 
-verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
-information is not yet available.$>$
+\begin{enumerate}
+\item The Manager navigates to the login page.
+\item The Manager enters the username and password.
+\item The Manager clicks the login button.
+\item If the form data is empty, system shows a prompt
+for login details.
+\item If data is not empty, it is sent to the server.
+\item The server compares the login data with the
+password stored in the database.
+\item If login credentials are verified, the manager is
+logged in.
+\item If not, the manager is prompted to enter the login
+details again.
+\end{enumerate}
 
-$<$Each requirement should be uniquely identified with a sequence number or a 
-meaningful tag of some kind.$>$
+\section{Add/Delete Student}
+Adding and deleting students to the database.
 
-REQ-1:	REQ-2:
 
-\section{System Feature 2 (and so on)}
+\subsection{Description and Priority}
+When a student joins a particular mess he/she is added to the mess' database and when a student chooses to change the mess .Priority is medium.
+
+\subsection{Stimulus/Response Sequences}
+The Mess manager clicks on the ADD STUDENT button.The manager adds the details of the student and saves it. Later he can update the student details and also delete if the student changes the mess. 
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item After loging in the manager navigates to the ADD STUDENT  button.
+\item The manager enters all the data about the student and clicks on the save button.
+\item If the mandatory fields are not filled the manager is shown a pop-up error to fill the mandatory fields.
+\item Manager clicks on the save button to save the student record to the database.
+\item Manager has the option of Update and Delete a particular student record.
+\end{enumerate}
+
+\section{Per month fee details}
+Students and their corresponding fees details are shown here.
+
+
+\subsection{Description and Priority}
+This shows the list of all students registered in this mess and their mess fee payment status such as paid or pending or does the student has a negative bill in case of advance fee payment .Priority is low.
+
+\subsection{Stimulus/Response Sequences}
+The Mess manager clicks on the PER MONTH FEE DETAILS button.The manager can view the payment details of all the students.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item After loging in the manager navigates to the PER MONTH FEE DETAILS  button.
+\item The manager can search for a particular students fee status.  
+\item Navigate to the search bar and type the student name or roll number and hit search.
+\item If the search string doesn't match any record in the database "no such student" error message is shown.
+\item Is the search query matches the record in database the corresponding students fee details are shown. 
+\item Manager can view the names of students who's payments are pending/paid separately.
+\end{enumerate}
+
+\section{Add and Update mess cuts}
+If the student is on leave for one or more days he can apply mess cuts so that the fees for that particular days are not added in the final bill.
+
+
+\subsection{Description and Priority}
+Manager receives mess cut request from students and The manager has to add the mess cut to that particular student and later if the student wants to change the mess cut days manager can update it .Priority is medium.
+
+\subsection{Stimulus/Response Sequences}
+The Mess manager clicks on the "Add and Update mess cuts" button.The manager can view the mes cut requests from students and can add/update the mess cut details.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item After loging in the manager navigates to the Add and Update mess cuts  button.
+\item For each request from student manager can add or update number of mess cut days .
+\end{enumerate}
+
+\section{Extras per day}
+If the student a student purchases any extra items for a day it is added to his tab.
+
+
+\subsection{Description and Priority}
+For each extra item a student purchases the student id the item he/she bought is saved along with the date and time of the purchase .Priority is medium.
+
+\subsection{Stimulus/Response Sequences}
+Manager clicks on the EXTRAS button.And enters the student id and the item id and adds saves it.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item After loging in the manager navigates to the EXTRAS  button.
+\item When a student purchases an extra item the mess manager adds the student name and the extra item he bought .
+\item After entering the details manager clicks on SAVE.
+\item If the entered data is wrong and doesn't match the records of the database an error message is popped up. 
+\item The cost of the extra item is added to the bill of the particular student. 
+\end{enumerate}
+
+
 
 
 \chapter{Other Nonfunctional Requirements}
