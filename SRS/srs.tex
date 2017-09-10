@@ -206,11 +206,186 @@ transfer rates, and synchronization mechanisms.$>$
 
 
 \chapter{System Features}
-$<$This template illustrates organizing the functional requirements for the 
-product by system features, the major services provided by the product. You may 
-prefer to organize this section by use case, mode of operation, user class, 
-object class, functional hierarchy, or combinations of these, whatever makes the 
-most logical sense for your product.$>$
+
+\section{Student Login}
+A system to authenticate students.
+
+\subsection{Description and Priority}
+This feature is included to authenticate students. Only authenticated students are allowed to access this system. Hence this feature is of high priority.
+
+\subsection{Stimulus/Response Sequences}
+The Student enters his login details and clicks on the login button in the login page.If the login details are correct then the student is logged in and is taken to the home page of his account.Otherwise it remains in the login page.
+
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student navigates to the login page 
+    \item The student enters the username and password 
+    \item The student clicks the login button 
+    \item If the form data is empty, system shows a prompt for login details 
+    \item If data is not empty, it is sent to the server 
+    \item The server compares the login data with the password stored in the database 
+    \item If login credentials are verified, the student is logged in 
+    \item If not, the student is prompted to enter the login details again
+\end{enumerate} 
+
+\section{View Menu}
+A feature for students to view menu.
+
+\subsection{Description and Priority}
+This feature allows students to view menu of each day.  The priority of this feature is low.
+
+\subsection{Stimulus/Response Sequences}
+The student needs to click on the view menu button provided in his home page. He will be taken to a page which displays the menu.
+
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account
+    \item The student clicks on the view menu button in his home page
+    \item The student is taken to a page which displays the entire menu of each day
+    
+\end{enumerate} 
+
+\section{View Bill}
+A feature for students to view their mess bill.
+
+\subsection{Description and Priority}
+This feature allows students to view their mess bill for that particular month. The bill separately mentions the cost of their regular meal and the extras they purchased.  The priority of this feature is medium.
+
+\subsection{Stimulus/Response Sequences}
+The student needs to click on the view bill button provided in his home page. He will be taken to a page which displays the bill.
+
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account
+    \item The student clicks on the view bill button in his home page
+    \item The bill details of the student for that particular month is taken from database and displayed 
+    
+\end{enumerate} 
+
+\section{Mess cut}
+This feature allows students to request for mess cut.
+
+\s
+
+ubsection{Description and Priority}
+This feature allows students to request mess cut for the days they are not staying in hostel (like holidays,vacations etc..) so that the mess fees for those many days will be deducted from their monthly bill. Priority of this feature is medium.
+
+\subsection{Stimulus/Response Sequences}
+The Student clicks on the mess cut button provided in his home page. He will be directed to a page in which he can make a new request for mess cut as well as he can view his previous mess cut history for that particular month.
+
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account 
+    \item The student clicks the mess cut button in his home page
+    \item The student is taken to a page containing his previous mess cut details as well as a form and button to make new request 
+    \item The student enters the dates for which he wants mess cut  
+    \item The student clicks the apply button
+    \item The mess cut details will be entered in the database with request status as 'pending'
+    \item Later when the admin sanctions the request,the request status is changed to 'granted'
+\end{enumerate} 
+
+
+\section{Pay bill}
+This feature allows students to pay their mess bill.
+
+\subsection{Description and Priority}
+This feature allows students to pay their mess bill using online banking facilities. Priority of this feature is high.
+
+
+\subsection{Stimulus/Response Sequences}
+The Student clicks on the pay bill button provided in his home page. He will be directed to SBI collect page where he can make his payments securely.
+
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account 
+    \item The student clicks the pay bill button in his home page
+    \item The student is taken to SBI collect page where he can make his payment
+    \item After the transaction is completed, the student's mess dues in the database is updated based on the amount paid
+\end{enumerate} 
+
+\section{Purchase history}
+This feature allows students to view their purchase history.
+
+\subsection{Description and Priority}
+This feature gives students the provision to view the details  as well as price of the extra food items they purchased apart from the regular meal.Priority of this feature is medium.
+
+\subsection{Stimulus/Response Sequences}
+The student clicks on the purchase history button on his home page.He will be taken to a page which displays the list of extras they purchased and their prices
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account 
+    \item The student clicks the purchase history button in his home page
+    \item The student is taken to a new page where he can view his purchase history of that month
+    
+\end{enumerate} 
+
+\section{Give feedback}
+This feature allows students to give their feedback.
+
+\subsection{Description and Priority}
+This feature is included to allow students to give their feedback regarding the food as well as other aspects of the mess which will help in the betterment of the functioning of the mess.The priority is medium.
+
+\subsection{Stimulus/Response Sequences}
+The student clicks on the feedback button on his home page.He will be taken to a page containing a form to give the feedback.
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+
+\begin{enumerate}
+    \item The student logs in to his account 
+    \item The student clicks the feedback button in his home page
+    \item The student is taken to a new page where he writes the feedback
+    \item The student clicks the send feedback button
+    \item If the form data is empty,system shows a prompt for empty feedback
+    \item If the form is not empty ,data is sent to the server
+    \item The server stores the feedback which can be later accessed by the admin.
+\end{enumerate} 
+
+\section{Change password}
+This feature allows students to change their login password.
+
+\subsection{Description and Priority}
+This feature gives students the provision to change their password whenever they want. Hence the students can change their password in case if their current password is revealed to someone. Thus this feature helps in maintaining the confidentiality of student account and therefore the priority of this feature is high.
+
+\subsection{Stimulus/Response Sequences}
+The student clicks on the change password button on his home page.He will be taken to a page containing a form to fill the new password details.
+\subsection{Functional Requirements}
+The functional requirements are listed below in order.
+ 
+ \begin{enumerate}
+    \item The student logs in to his account 
+    \item The student clicks the change password button in his home page
+    \item The student is taken to a new page where he enters the previous password and the new desired password.
+    \item The data is sent to the server
+    \item The server validates the user's password and then updates his password in the database
+\end{enumerate} 
+
+\section{Student logout}
+A feature for students to logout from their account.
+
+\subsection{Description and Priority}
+The students can log out safely while they are not using the software in order to avoid any misuse. Priority of this feature is high.
+
+\subsection{Stimulus/Response Sequences}
+The student has already logged in and when the student clicks the logout button, the student is logged out of the system. The login page is showed at the end.
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+\item A popup is shown to the student to confirm if he wants to logout.
+\item If the student confirms he is redirected to the login page.
+\item The server ends the student's current session and logs him out of the system.
+\end{enumerate}
 
 \section{Mess Login}
 Login authentication for the mess manager. 
